@@ -1,40 +1,33 @@
-import React from "react";
-
 const Footer = () => {
   return (
     <>
       <style>
         {`
-                    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
-                    *{
-                        font-family: "Geist", sans-serif;
-                    }
-                `}
+            @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+            *{
+                font-family: "Geist", sans-serif;
+            }
+        `}
       </style>
       <div className="bg-black pt-20 px-4">
         <footer className="bg-white w-full max-w-[1350px] mx-auto text-black pt-8 lg:pt-12 px-4 sm:px-8 md:px-16 lg:px-28 rounded-tl-3xl rounded-tr-3xl overflow-hidden">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-6 gap-8 md:gap-12">
             <div className="lg:col-span-3 space-y-6">
-              <a href="https://prebuiltui.com" className="block">
-                <svg
-                  width="31"
-                  height="33"
-                  viewBox="0 0 31 33"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="m8.349 4.55 7.098 3.884 7.098-3.885M8.35 27.83v-7.755l-7.1-3.886m28.394 0-7.099 3.885v7.754M1.676 8.658l13.771 7.546 13.77-7.546M15.448 31.25V16.189m14.197 5.976V10.212c0-.524-.147-1.039-.424-1.492a3.1 3.1 0 0 0-1.154-1.093L17.024 1.65a3.3 3.3 0 0 0-1.577-.4 3.3 3.3 0 0 0-1.577.4L2.828 7.627A3.07 3.07 0 0 0 1.674 8.72a2.87 2.87 0 0 0-.424 1.492v11.953c0 .524.147 1.04.424 1.493s.675.83 1.154 1.092l11.042 5.977c.48.262 1.023.4 1.577.4a3.3 3.3 0 0 0 1.577-.4l11.042-5.977c.48-.262.877-.639 1.154-1.092s.423-.969.424-1.493"
-                    stroke="#262626"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/logo.webp" 
+                    alt="shopYaar Logo" 
+                    className="h-full w-full object-contain" 
                   />
-                </svg>
-              </a>
+                </div>
+                <span className="text-2xl font-bold tracking-tight text-slate-900">
+                  shop<span className="text-indigo-600">Yaar</span>
+                </span>
+              </div>
               <p className="text-sm/6 text-neutral-600 max-w-96">
-                PrebuiltUI helps you build faster by transforming your design
-                vision into fully functional, production-ready UI components.
+                shopYaar provides high-quality products curated for your needs. 
+                Experience a seamless shopping journey with our premium collection.
               </p>
               <div className="flex gap-5 md:gap-6 order-1 md:order-2">
                 {/* X (Twitter) */}
@@ -123,55 +116,50 @@ const Footer = () => {
             </div>
 
             <div className="lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-28 items-start">
-              {/* Products */}
+              {/* Shop */}
               <div>
-                <h3 className="font-medium text-sm mb-4">Products</h3>
+                <h3 className="font-medium text-sm mb-4">Shop</h3>
                 <ul className="space-y-3 text-sm text-neutral-800">
                   <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      Components
+                    <a href="#" className="hover:text-neutral-700 transition-colors">
+                      All Products
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      Templates
+                    <a href="#" className="hover:text-neutral-700 transition-colors">
+                      Electronics
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      Icons
+                    <a href="#" className="hover:text-neutral-700 transition-colors">
+                      Jewelry
                     </a>
                   </li>
                 </ul>
               </div>
 
-              {/* Resources */}
+              {/* Support */}
               <div>
-                <h3 className="font-medium text-sm mb-4">Resources</h3>
+                <h3 className="font-medium text-sm mb-4">Support</h3>
                 <ul className="space-y-3 text-sm text-neutral-800">
                   <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      PrebuiltUI
+                    <a href="#" className="hover:text-neutral-700 transition-colors">
+                      Help Center
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      Templates
+                    <a href="#" className="hover:text-neutral-700 transition-colors">
+                      Track Order
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      Components
+                    <a href="#" className="hover:text-neutral-700 transition-colors">
+                      Returns
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      Blogs
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      Store
+                    <a href="#" className="hover:text-neutral-700 transition-colors">
+                      Shipping
                     </a>
                   </li>
                 </ul>
@@ -182,31 +170,23 @@ const Footer = () => {
                 <h3 className="font-medium text-sm mb-4">Company</h3>
                 <ul className="space-y-3 text-sm text-neutral-800">
                   <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      About
+                    <a href="#" className="hover:text-neutral-700 transition-colors">
+                      About Us
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      Vision
-                    </a>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <a href="#" className="hover:text-neutral-700">
+                    <a href="#" className="hover:text-neutral-700 transition-colors">
                       Careers
                     </a>
-                    <span className="text-[11px] px-2 py-0.5 rounded-full bg-neutral-50 border border-neutral-400 text-neutral-700">
-                      HIRING
-                    </span>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      Privacy policy
+                    <a href="#" className="hover:text-neutral-700 transition-colors">
+                      Privacy Policy
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-neutral-700">
-                      Contact Us
+                    <a href="#" className="hover:text-neutral-700 transition-colors">
+                      Terms of Service
                     </a>
                   </li>
                 </ul>
@@ -215,13 +195,13 @@ const Footer = () => {
           </div>
 
           <div className="max-w-7xl mx-auto mt-12 pt-4 border-t border-neutral-300 flex justify-between items-center">
-            <p className="text-neutral-600 text-sm">© 2025 PrebuiltUI Design</p>
-            <p className="text-sm text-neutral-600">All right reserved.</p>
+            <p className="text-neutral-600 text-sm">© 2025 shopYaar Store</p>
+            <p className="text-sm text-neutral-600">All rights reserved.</p>
           </div>
           <div className="relative">
             <div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-3xl h-full max-h-64 bg-slate-100 rounded-full blur-[100px] pointer-events-none" />
-            <h1 className=" text-center font-extrabold leading-[0.7] text-transparent text-[clamp(3rem,15vw,15rem)] [-webkit-text-stroke:1px_#D4D4D4] mt-6">
-              PrebuiltUI
+            <h1 className="text-center font-extrabold leading-[0.7] text-transparent text-[clamp(2rem,12vw,10rem)] [-webkit-text-stroke:1px_#E5E5E5] mt-8 pb-4">
+              shopYaar
             </h1>
           </div>
         </footer>
