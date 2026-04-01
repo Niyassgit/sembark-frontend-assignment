@@ -70,9 +70,8 @@ const ProductDetail = () => {
               <button
                 key={index}
                 onClick={() => setThumbnail(image)}
-                className={`border-2 rounded-lg overflow-hidden cursor-pointer flex-shrink-0 transition-all ${
-                  thumbnail === image ? "border-indigo-500 shadow-md" : "border-gray-200 opacity-70 hover:opacity-100"
-                }`}
+                className={`border-2 rounded-lg overflow-hidden cursor-pointer flex-shrink-0 transition-all ${thumbnail === image ? "border-indigo-500 shadow-md" : "border-gray-200 opacity-70 hover:opacity-100"
+                  }`}
               >
                 <img src={image} alt={`View ${index + 1}`} className="w-20 h-20 md:w-24 md:h-24 object-cover" />
               </button>
@@ -93,7 +92,7 @@ const ProductDetail = () => {
           <div>
             <span className="text-indigo-500 text-sm font-bold tracking-widest uppercase">{product.category}</span>
             <h1 className="text-4xl font-bold text-slate-900 mt-2">{product.title}</h1>
-            
+
             <div className="flex items-center gap-3 mt-4">
               <div className="flex items-center bg-green-100 text-green-700 px-2 py-0.5 rounded text-sm font-bold">
                 {product.rating} <span className="ml-1 text-yellow-500">★</span>
@@ -130,7 +129,7 @@ const ProductDetail = () => {
               Buy Now
             </button>
           </div>
-          
+
           <div className="mt-6 flex items-center gap-6 text-gray-500 text-sm">
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>

@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "../../features/home/pages/HomePage";
-import CartPage from "../../features/cart/components/CartPage";
+import CartPage from "../../features/cart/pages/CartPage";
 import ProductDetail from "../../features/products/pages/ProductDetail";
 import MainLayout from "../../shared/layouts/MainLayout";
 

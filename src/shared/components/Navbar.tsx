@@ -65,7 +65,7 @@ const Navbar = () => {
           </svg>
         </div>
 
-        <div className="relative cursor-pointer">
+        <div className="relative cursor-pointer" onClick={()=>navigate("/cart")}>
           <svg
             width="18"
             height="18"
