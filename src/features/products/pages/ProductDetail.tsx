@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { getProductById } from "../services/productService";
 import { type Product } from "../types/product";
+import { useCart } from "../../cart/context/CartContext";
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [thumbnail, setThumbnail] = useState<string | null>(null);
+  const [added, setAdded] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -28,6 +32,14 @@ const ProductDetail = () => {
 
     fetchProduct();
   }, [id]);
+
+  const handleAddToCart = () => {
+    if (product) {
+      addToCart(product);
+      setAdded(true);
+      setTimeout(() => setAdded(false), 2000);
+    }
+  };
 
   if (loading) {
     return (
@@ -122,10 +134,22 @@ const ProductDetail = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center mt-10 gap-4">
-            <button className="w-full py-4 px-8 rounded-full cursor-pointer font-bold bg-slate-50 text-slate-900 border border-slate-200 hover:bg-slate-100 transition-all active:scale-95">
-              Add to Cart
+            <button
+              onClick={handleAddToCart}
+              className={`w-full py-4 px-8 rounded-full cursor-pointer font-bold transition-all active:scale-95 ${added
+                  ? "bg-green-500 text-white border-green-500"
+                  : "bg-slate-50 text-slate-900 border-slate-200 hover:bg-slate-100 border"
+                }`}
+            >
+              {added ? "Added to Cart!" : "Add to Cart"}
             </button>
-            <button className="w-full py-4 px-8 rounded-full cursor-pointer font-bold bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all active:scale-95">
+            <button
+              onClick={() => {
+                handleAddToCart();
+                navigate("/cart");
+              }}
+              className="w-full py-4 px-8 rounded-full cursor-pointer font-bold bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all active:scale-95"
+            >
               Buy Now
             </button>
           </div>
