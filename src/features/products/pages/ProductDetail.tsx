@@ -60,7 +60,6 @@ const ProductDetail = () => {
     );
   }
 
-  // Calculate discounted price
   const discountPercentage = (product as any).discountPercentage || 0;
   const originalPrice = product.price / (1 - discountPercentage / 100);
 
