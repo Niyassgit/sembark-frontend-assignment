@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "https://fakestoreapi.com",
+  baseURL: "https://dummyjson.com",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
