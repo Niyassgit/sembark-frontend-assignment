@@ -1,15 +1,11 @@
-import axios from "axios";
-
-
-const API_URL = "https://fakestoreapi.com/products";
+import apiClient from "../../../shared/utils/apiClient";
 
 export const getPrducts = async () => {
-  
-    const response = await axios.get(API_URL);
+    const response = await apiClient.get("/products");
     return response.data;
 }
 
 export const getProductById = async (id: string) => {
-    const response = await axios.get(`${API_URL}/${id}`);
+    const response = await apiClient.get(`/products/${id}`);
     return response.data;
 }
