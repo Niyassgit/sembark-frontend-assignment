@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
   return (
     <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
       <a href="https://prebuiltui.com">
@@ -28,7 +30,7 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className="hidden sm:flex items-center gap-8">
-        <a href="#">Home</a>
+        <a onClick={() => navigate(`/`)}>Home</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
 

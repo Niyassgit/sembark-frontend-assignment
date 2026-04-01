@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { getPrducts } from "../services/productService";
 import { type Product } from "../types/product";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -34,9 +36,7 @@ const Products = () => {
 
   if (error) {
     return (
-      <div className="text-center text-red-500 font-medium my-10">
-        {error}
-      </div>
+      <div className="text-center text-red-500 font-medium my-10">{error}</div>
     );
   }
 
@@ -58,7 +58,11 @@ const Products = () => {
       </p>
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-7xl mx-auto px-4">
         {products.map((product) => (
-          <div key={product.id} className="group cursor-pointer">
+          <div
+            key={product.id}
+            className="group cursor-pointer"
+            onClick={() => navigate(`/product/${product.id}`)}
+          >
             <div className="relative overflow-hidden rounded-lg bg-gray-100">
               <img
                 className="w-full group-hover:scale-105 duration-500 transition-all aspect-[3/4] object-contain p-4 mix-blend-multiply bg-white"
@@ -71,7 +75,9 @@ const Products = () => {
               <h3 className="text-sm text-gray-700 line-clamp-1 group-hover:text-blue-600 transition-colors">
                 {product.title}
               </h3>
-              <p className="text-lg font-bold text-gray-900">$ {product.price.toFixed(2)}</p>
+              <p className="text-lg font-bold text-gray-900">
+                $ {product.price.toFixed(2)}
+              </p>
               <div className="flex items-center gap-1">
                 <span className="text-xs text-yellow-500">★</span>
                 <span className="text-xs text-gray-500">{product.rating}</span>
