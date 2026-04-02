@@ -105,7 +105,7 @@ const CartPage = () => {
                 </div>
               </div>
               <div className="text-center font-bold text-slate-900">
-                ${(item.price * item.quantity).toFixed(2)}
+              ₹{(item.price * item.quantity).toFixed(2)}
               </div>
               <button
                 onClick={() => removeFromCart(item.id)}
@@ -201,7 +201,7 @@ const CartPage = () => {
           <div className="text-gray-600 mt-6 space-y-4">
             <div className="flex justify-between text-sm">
               <span>Price ({totalItems} items)</span>
-              <span className="font-bold text-slate-900">${totalPrice.toFixed(2)}</span>
+              <span className="font-bold text-slate-900">₹{totalPrice.toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-sm">
               <span>Shipping Fee</span>
@@ -209,12 +209,12 @@ const CartPage = () => {
             </div>
             <div className="flex justify-between text-sm">
               <span>Tax (2%)</span>
-              <span className="font-bold text-slate-900">${taxAmount.toFixed(2)}</span>
+              <span className="font-bold text-slate-900">₹{taxAmount.toFixed(2)}</span>
             </div>
             <div className="pt-2">
               <div className="flex justify-between text-xl font-extrabold text-slate-900">
                 <span>Total Amount</span>
-                <span>${finalTotal.toFixed(2)}</span>
+                <span>₹{finalTotal.toFixed(2)}</span>
               </div>
             </div>
           </div>

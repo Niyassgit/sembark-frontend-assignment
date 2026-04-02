@@ -21,7 +21,7 @@ const ProductDetail = () => {
         if (!id) return;
         const data = await getProductById(id);
         setProduct(data);
-        setThumbnail(data.images[0] || data.thumbnail);
+        setThumbnail(data.images[0]);
       } catch (err) {
         setError("Failed to load product details. Please try again.");
         console.error(err);
@@ -60,15 +60,13 @@ const ProductDetail = () => {
     );
   }
 
-  const discountPercentage = (product as any).discountPercentage || 0;
-  const originalPrice = product.price / (1 - discountPercentage / 100);
 
   return (
     <div className="max-w-7xl w-full px-6 py-10 mx-auto">
       <nav className="text-sm font-medium mb-8">
         <Link to="/" className="text-gray-500 hover:text-indigo-600">Home</Link>
         <span className="mx-2 text-gray-400">/</span>
-        <span className="text-gray-500 capitalize">{product.category}</span>
+        <span className="text-gray-500 capitalize">{product.category.name}</span>
         <span className="mx-2 text-gray-400">/</span>
         <span className="text-indigo-600 truncate max-w-[200px] inline-block align-bottom">{product.title}</span>
       </nav>
@@ -101,26 +99,20 @@ const ProductDetail = () => {
         {/* Product Info */}
         <div className="flex flex-col lg:w-1/2">
           <div>
-            <span className="text-indigo-500 text-sm font-bold tracking-widest uppercase">{product.category}</span>
+            <span className="text-indigo-500 text-sm font-bold tracking-widest uppercase">{product.category.name}</span>
             <h1 className="text-4xl font-bold text-slate-900 mt-2">{product.title}</h1>
 
             <div className="flex items-center gap-3 mt-4">
               <div className="flex items-center bg-green-100 text-green-700 px-2 py-0.5 rounded text-sm font-bold">
-                {product.rating} <span className="ml-1 text-yellow-500">★</span>
+                {product.rating || 0} <span className="ml-1 text-yellow-500">★</span>
               </div>
-              <span className="text-gray-400 text-sm">{product.stock > 0 ? `In Stock (${product.stock})` : "Out of Stock"}</span>
+              <span className="text-gray-400 text-sm">{(product.stock ?? 1) > 0 ? `In Stock` : "Out of Stock"}</span>
             </div>
           </div>
 
           <div className="mt-8">
             <div className="flex items-center gap-3">
-              <span className="text-3xl font-extrabold text-slate-900">${product.price.toFixed(2)}</span>
-              {discountPercentage > 0 && (
-                <span className="text-xl text-gray-400 line-through">${originalPrice.toFixed(2)}</span>
-              )}
-              {discountPercentage > 0 && (
-                <span className="text-green-600 font-bold text-sm bg-green-50 px-2 py-1 rounded">-{discountPercentage}% Off</span>
-              )}
+              <span className="text-3xl font-extrabold text-slate-900">₹{product.price.toFixed(2)}</span>
             </div>
             <p className="text-gray-500 text-sm mt-1">(inclusive of all taxes)</p>
           </div>
