@@ -1,19 +1,20 @@
 # shopYaar - E-Commerce Application
 
-A modern, high-performance React e-commerce application specializing in premium home appliances.
+A modern, high-performance React e-commerce application built for the Sembark Frontend Assignment.
 
 ## 🔗 Repository
 GitHub: [https://github.com/Niyassgit/sembark-frontend-assignment](https://github.com/Niyassgit/sembark-frontend-assignment)
 
 ## 📖 Description
-shopYaar is a fully functional online store built with React 19, TypeScript, and Tailwind CSS. It features a curated catalog of household essentials, dynamic product detail routing, a global shopping cart with real-time updates, and a sleek, mobile-responsive design. The application integrates seamlessly with external product APIs to provide a smooth, professional shopping experience.
+shopYaar is a fully functional online store built with React 19, TypeScript, and Tailwind CSS. It features a robust product discovery system powered by the **Platzi Fake Store API**, dynamic routing, and a persistent shopping cart. The application is architected using a feature-based structure for scalability and maintainability.
 
 ### Key Features
-- **Dynamic Catalog**: Real-time product listing and detailed information view.
-- **Global Shopping Cart**: Centralized state management for adding, removing, and updating item quantities.
-- **Premium UI/UX**: Custom-designed Hero, Navbar, and Footer components with a focus on modern aesthetics.
-- **Context API State**: Global state synchronization across the entire application for cart and count updates.
-- **Responsive Design**: Optimized for all screen sizes, from mobile devices to desktop displays.
+- **Advanced Filtering**: Filter products by multiple categories, price ranges, and titles simultaneously.
+- **URL-Persistent State**: Filters and sort orders are synchronized with URL search parameters, ensuring state persistence across page refreshes and navigation history.
+- **Dynamic Product Discovery**: Real-time product search and math-based client-side sorting (Price: Low to High / High to Low).
+- **Persistent Shopping Cart**: Global state management using React Context API with `localStorage` synchronization to maintain cart items across sessions.
+- **Refactored Architecture**: Clean, modular codebase with a dedicated `FilterBox` component and feature-specific services.
+- **Responsive & Premium UI**: Mobile-first design with a modern, glassmorphic aesthetic and smooth transitions.
 
 ## 🚀 Getting Started
 
@@ -54,6 +55,8 @@ Follow these steps to set up and run the project locally on your machine.
 - **React 19**
 - **TypeScript**
 - **Vite** (Build Tool)
-- **Tailwind CSS** (Styling)
+- **Tailwind CSS 4** (Styling)
 - **React Router 7** (Navigation)
 - **Axios** (API Requests)
+- **Context API** (State Management)
+- **Platzi Fake Store API** (Data Source)
